@@ -1,6 +1,6 @@
 public class ConditionalStatemen {
 	public static void main(String[] args) {
-		int age = 20;		
+		int age = 10;		
 		if(age > 20) {
 			System.out.println("Возврат больше 20");
 		}
