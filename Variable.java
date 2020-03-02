@@ -1,22 +1,21 @@
-public class Variable{	
+public class Variable {	
     public static void main(String[] args) {
-    	byte numcores = 6;
-    	short nummonitor = 2;
-    	int nummemorymb = 16384;
-    	long nummemorykb = 16777216;
-    	float monitordiagonalinch = 23.8f;
-    	double monitordiagonalcm = 60.452d;
+    	byte numCores = 6;
+    	short numMonitor = 2;
+    	int numMemoryMb = 16384;
+    	long numMemoryKb = 16777216;
+    	float monitorDiagonalInch = 23.8f;
+    	double monitorDiagonalCm = 60.452d;
     	char proc = 'A';
-    	boolean goodcomputer = true;
+    	boolean isGoodComputer = true;
 
-        System.out.println("Количество ядер: " + numcores);
-        System.out.println("Количество мониторов: " + nummonitor);
-        System.out.println("Количество оперативной памяти Mb: " + nummemorymb);
-        System.out.println("Количество оперативной памяти Kb: " + nummemorykb);
-        System.out.println("Диагональ монитора дюйм: " + monitordiagonalinch);
-        System.out.println("Диагональ монитора см: " + monitordiagonalcm);
+        System.out.println("Количество ядер: " + numCores);
+        System.out.println("Количество мониторов: " + numMonitor);
+        System.out.println("Количество оперативной памяти Mb: " + numMemoryMb);
+        System.out.println("Количество оперативной памяти Kb: " + numMemoryKb);
+        System.out.println("Диагональ монитора дюйм: " + monitorDiagonalInch);
+        System.out.println("Диагональ монитора см: " + monitorDiagonalCm);
         System.out.println("Первая буква производителя процессора: " + proc);
-        System.out.println("Это хороший компьютер? : " + goodcomputer);
-
+        System.out.println("Это хороший компьютер? : " + isGoodComputer);
     }
 }
