@@ -1,6 +1,6 @@
 public class Variable {	
     public static void main(String[] args) {
-    	byte numCores = 6;
+    	byte numCores = 7;
     	short numMonitor = 2;
     	int numMemoryMb = 16384;
     	long numMemoryKb = 16777216;
