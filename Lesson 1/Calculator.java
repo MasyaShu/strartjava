@@ -10,7 +10,7 @@ public class Calculator {
 		} else if(sign  == '-') {
 			result = a - b;
 		} else if(sign  == '/') {
-			if(b != 0){
+			if(b != 0) {
 				result = a / b;
 			}
 		} else if(sign  == '*') {
