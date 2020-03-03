@@ -3,21 +3,21 @@ public class Calculator {
 		int a = 5;
 		int b = 3;
 		int result = 0;
-		char expression = '^';
+		char sign  = '^';
 
-		if(expression == '+') {
+		if(sign  == '+') {
 			result = a + b;
-		} else if(expression == '-') {
+		} else if(sign  == '-') {
 			result = a - b;
-		} else if(expression == '/') {
+		} else if(sign  == '/') {
 			if(b != 0){
 				result = a / b;
 			}
-		} else if(expression == '*') {
+		} else if(sign  == '*') {
 			result = a * b;
-		} else if(expression == '%') {
+		} else if(sign  == '%') {
 			result = a % b;
-		} else if(expression == '^') {
+		} else if(sign  == '^') {
 			result = a;
 			for(int i = 2; i <= b; i++) {
 				result *= a;
