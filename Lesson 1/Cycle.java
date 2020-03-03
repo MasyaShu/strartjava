@@ -16,7 +16,7 @@ public class Cycle {
 			if(value % 2 > 0) {
 				sum += value;
 			}
-			value = value + 1;
+			value++;
 		} while(value <= 20);
 		System.out.println(sum);
 	}
