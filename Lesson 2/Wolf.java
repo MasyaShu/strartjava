@@ -1,6 +1,6 @@
 public class Wolf {
 
-	boolean gender; //true M, false F
+	boolean male; //true M, false F
 	String nickname;
 	float weight;
 	int age;
