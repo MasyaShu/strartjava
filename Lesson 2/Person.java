@@ -1,6 +1,6 @@
 public class Person {
 	
-	boolean sex = true; //true M, false W
+	boolean gender = true; //true M, false W
 	String mame = "Ivan";
 	float height = 1.83f;
 	float weight = 88.3f
