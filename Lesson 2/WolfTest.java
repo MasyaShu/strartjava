@@ -2,13 +2,13 @@ public class WolfTest {
 
 	public static void main(String[] args) {
 		Wolf wolf = new Wolf();
-		wolf.male = false;
+		wolf.isMale = false;
 		wolf.nickname = "Barbos";
 		wolf.weight = 13.4f;
 		wolf.age = 4;
 		wolf.color = "Черный";
 
-		if(wolf.male)
+		if(wolf.isMale)
 			System.out.println("Пол: male");
 		else
 			System.out.println("Пол: female");
