@@ -8,7 +8,7 @@ public class WolfTest {
 		wolf.age = 4;
 		wolf.color = "Черный";
 
-		if(wolf.isMale){
+		if(wolf.isMale) {
 			System.out.println("Пол: male");
 		}
 		else{
