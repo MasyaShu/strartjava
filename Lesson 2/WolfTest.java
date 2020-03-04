@@ -18,6 +18,7 @@ public class WolfTest {
 		System.out.println("Вес: " + wolf.getWeight());
 		System.out.println("Возвраст: " + wolf.getAge());
 		System.out.println("Окрас: " + wolf.getColor());
+		
 		wolf.go();
 		wolf.sit();
 		wolf.run();
