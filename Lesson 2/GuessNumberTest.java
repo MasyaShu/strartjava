@@ -51,7 +51,7 @@ public class GuessNumberTest {
 			while(true) {
 				scan.nextLine();
 				System.out.print("Хотите продолжить? [Y/N]: ");
-				String otvet = scan.nextLine();
+				String otvet = scan.next();
 				if(otvet.equalsIgnoreCase("N")) {
 					isExit = true;
 					break;
