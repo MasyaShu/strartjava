@@ -21,14 +21,14 @@ public class GuessNumberTest {
 				System.out.print(player2.getName() + ", угадай какое число загадал компьютер?: ");
 				player2.setNum(scan.nextInt());
 
-				boolean equalNum = player1.getNum() == player2.getNum();
+				boolean equalNumPlayer = player1.getNum() == player2.getNum();
 
 				if(guessNumber.playGame(player1.getNum()) == 0) {
 					System.out.println(player1.getName() + ", ваше число МЕНЬШЕ загаданного");
 				} else if(guessNumber.playGame(player1.getNum()) == 1) {
 					System.out.println(player1.getName() + ", ваше число БОЛЬШЕ загаданного");
 				} else {
-					if(equalNum) {
+					if(equalNumPlayer) {
 						System.out.println(player1.getName() + " и " + player2.getName() + ", вы оба угадали  число: " + guessNumber.getSecretNum() + " Ничья!");
 						break;
 					} else {
