@@ -10,7 +10,7 @@ public class Wolf {
 		return isMale;
 	}
 
-	public void setMale(boolean gender) {
+	public void setMale(boolean isMale) {
 		this.isMale = isMale;
 	}
 
