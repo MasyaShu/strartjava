@@ -1,64 +1,64 @@
 public class Calculator {
-	
-		private int a;
-		private int b;
-		private String sign;
-		private int result;
 
-		public int getA() {
-			return a;
-		}
+	private int a;
+	private int b;
+	private char sign;
+	private int result;
 
-		public int getB() {
-			return b;
-		}
+	public int getA() {
+		return a;
+	}
 
-		public String getSign() {
-			return sign;
-		}
+	public int getB() {
+		return b;
+	}
 
-		public int getResult() {
-			return result;
-		}
+	public char getSign() {
+		return sign;
+	}
 
-		public void setA(int a) {
-			this.a = a;
-		}
+	public int getResult() {
+		return result;
+	}
 
-		public void setB(int b) {
-			this.b = b;
-		}
+	public void setA(int a) {
+		this.a = a;
+	}
 
-		public void setSing(String sign) {
-			this.sign = sign;
-		}
+	public void setB(int b) {
+		this.b = b;
+	}
 
-		public void getResultSing() {
-			switch(sign) {
-				case "+": 
-					result = a + b;
-					break;
-				case "-":
-					result = a - b;
+	public void setSing(char sign) {
+		this.sign = sign;
+	}
+
+	public void calculate() {
+		switch(sign) {
+			case '+':
+				result = a + b;
 				break;
-					case "/":
-					if(b != 0) {
-						result = a / b;
-					}
-					break;
-				case "*":
-					result = a * b;
-					break;
-				case "%":
-					result = a % b;
-					break;
-				case "^":
-					result = a;
-					for(int i = 2; i <= b; i++) {
-						result *= a;
-					}
-					break;
-			}
+			case '-':
+				result = a - b;
+				break;
+			case '/':
+				if(b != 0) {
+					result = a / b;
+				}
+				break;
+			case '*':
+				result = a * b;
+				break;
+			case '%':
+				result = a % b;
+				break;
+			case '^':
+				result = a;
+				for(int i = 2; i <= b; i++) {
+					result *= a;
+				}
+				break;
 		}
-		
+	}
+
 }

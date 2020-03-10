@@ -6,34 +6,25 @@ public class CalculatorTest {
 		Scanner scan = new Scanner(System.in);
 		
 		while(true) {
-			
 			System.out.print("Введите первое число: ");
-			int a = scan.nextInt();
-			
-			System.out.print("Введите знак математической операции: ");
-			String sing = scan.next();
-			
-			System.out.print("Введите второе число: ");
-			int b = scan.nextInt();
-
 			Calculator calculator = new Calculator();
-			calculator.setA(a);
-			calculator.setB(b);
-			calculator.setSing(sing);
-			calculator.getResultSing();
+			calculator.setA(scan.nextInt());
+			System.out.print("Введите знак математической операции: ");
+			calculator.setSing(scan.next().charAt(0));
+			System.out.print("Введите второе число: ");
+			calculator.setB(scan.nextInt());
+			calculator.calculate();
 			System.out.println(calculator.getResult());
 
 			boolean isExit = false;
-			while(true) {
+			String reply;
+			do {
 				System.out.print("Хотите продолжить? [Y/N]: ");
-				String otvet = scan.next();
-				if(otvet.equalsIgnoreCase("N")) {
+				reply = scan.next();
+				if(reply.equalsIgnoreCase("N")) {
 					isExit = true;
-					break;
-				} else if(otvet.equalsIgnoreCase("Y")) {
-					break;
-				}	
-			}
+				}
+			} while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
 
 			if(isExit) {
 				break;
