@@ -9,28 +9,28 @@ public class Calculator {
 		return a;
 	}
 
-	public int getB() {
-		return b;
-	}
-
-	public char getSign() {
-		return sign;
-	}
-
-	public int getResult() {
-		return result;
-	}
-
 	public void setA(int a) {
 		this.a = a;
+	}
+
+	public int getB() {
+		return b;
 	}
 
 	public void setB(int b) {
 		this.b = b;
 	}
 
+	public char getSign() {
+		return sign;
+	}
+
 	public void setSing(char sign) {
 		this.sign = sign;
+	}
+
+	public int getResult() {
+		return result;
 	}
 
 	public void calculate() {
@@ -60,5 +60,4 @@ public class Calculator {
 				break;
 		}
 	}
-
 }
