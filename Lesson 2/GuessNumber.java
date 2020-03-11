@@ -14,7 +14,7 @@ public class GuessNumber {
 
 	public void playGame() {
 		Scanner scan = new Scanner(System.in);
-		secretNum = (int) ( Math.random() * 101 );
+		secretNum = (int) (Math.random() * 101);
 
 		while(true) {
 			System.out.print(player1.getName() + ", угадай какое число загадал компьютер?: ");

@@ -33,7 +33,7 @@ public class Calculator {
 		return result;
 	}
 
-	public void calculate() {
+	public int calculate() {
 		switch(sign) {
 			case '+':
 				result = a + b;
@@ -59,5 +59,6 @@ public class Calculator {
 				}
 				break;
 		}
+		return result;
 	}
 }
