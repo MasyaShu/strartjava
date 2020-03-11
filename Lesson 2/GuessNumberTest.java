@@ -11,23 +11,16 @@ public class GuessNumberTest {
 		System.out.print("Второй игрок введите ваше имя: ");
 		Player player2 = new Player(scan.nextLine());
 
-		while(true) {
-			GuessNumber guessNumber = new GuessNumber();
-			guessNumber.playGame(player1, player2);
+		GuessNumber guessNumber = new GuessNumber(player1, player2);
 
-			boolean isExit = false;
-				String reply;
-				do {
-					System.out.print("Хотите продолжить? [Y/N]: ");
-					reply = scan.next();
-					if(reply.equalsIgnoreCase("N")) {
-						isExit = true;
-					}
-				} while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
+		String reply = "Y";
+		while(reply.equalsIgnoreCase("Y")) {
+			guessNumber.playGame();
 
-				if(isExit) {
-					break;
-			}
+			do {
+				System.out.print("Хотите продолжить? [Y/N]: ");
+				reply = scan.next();
+			} while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
 		}
 	}
-}	
+}
