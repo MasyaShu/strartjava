@@ -10,13 +10,12 @@ public class CalculatorTest {
 
         while(reply.equalsIgnoreCase("Y")) {
             Calculator calculator = new Calculator();
-            System.out.print("Введите первое число: ");
-            calculator.setA(scan.nextInt());
-            System.out.print("Введите знак математической операции: ");
-            calculator.setSing(scan.next().charAt(0));
-            System.out.print("Введите второе число: ");
-            calculator.setB(scan.nextInt());
-            System.out.println(calculator.calculate());
+            System.out.print("Введите математическое выражение: ");
+            calculator.setExpression(scan.nextLine());
+            if(calculator.getExpression().equals("")) {
+                calculator.setExpression(scan.nextLine());
+            }
+            calculator.calculate();
 
             do {
                 System.out.print("Хотите продолжить? [Y/N]: ");
