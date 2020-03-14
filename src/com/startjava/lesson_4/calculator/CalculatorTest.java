@@ -12,14 +12,11 @@ public class CalculatorTest {
             Calculator calculator = new Calculator();
             System.out.print("Введите математическое выражение: ");
             calculator.setExpression(scan.nextLine());
-            if(calculator.getExpression().equals("")) {
-                calculator.setExpression(scan.nextLine());
-            }
             calculator.calculate();
 
             do {
                 System.out.print("Хотите продолжить? [Y/N]: ");
-                reply = scan.next();
+                reply = scan.nextLine();
             } while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
         }
     }
