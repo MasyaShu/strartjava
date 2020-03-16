@@ -27,23 +27,24 @@ public class GuessNumber {
             if(compareNumbers(player1, i)) {
                 printNumbers(i, player1);
                 printNumbers(i, player2);
-                clearNumbers(i);
+                clearNumbers(i, new Player[] {player1, player2});
                 break;
             }
 
             if(compareNumbers(player2, i)) {
                 printNumbers(i, player1);
                 printNumbers(i, player2);
-                clearNumbers(i);
+                clearNumbers(i, new Player[] {player1, player2});
                 break;
             }
         }
 
     }
 
-    private void clearNumbers(int i) {
-        Arrays.fill(player1.getNumbers(i), i);
-        Arrays.fill(player2.getNumbers(i), i);
+    private void clearNumbers(int i, Player[] players) {
+        for(Player player : players) {
+            Arrays.fill(player.getNumbers(i), i);
+        }
     }
 
     private void enterNumber(Player player, int i) {
