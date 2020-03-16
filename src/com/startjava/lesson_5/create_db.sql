@@ -9,4 +9,5 @@ CREATE TABLE jaegers (
 	status TEXT,
 	origin TEXT,
 	launch DATE,
-	kaijuKill INTEGER);
+	kaijuKill INTEGER
+);
