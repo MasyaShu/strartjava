@@ -15,14 +15,14 @@ public class GuessNumberMain {
 
         GuessNumber guessNumber = new GuessNumber(player1, player2);
 
-        String reply = "Y";
-        while(reply.equalsIgnoreCase("Y")) {
+        String answer = "Y";
+        while(answer.equalsIgnoreCase("Y")) {
             guessNumber.playGame();
 
             do {
                 System.out.print("Хотите продолжить? [Y/N]: ");
-                reply = scan.next();
-            } while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
+                answer = scan.next();
+            } while(!(answer.equalsIgnoreCase("N") || answer.equalsIgnoreCase("Y")));
         }
     }
 }

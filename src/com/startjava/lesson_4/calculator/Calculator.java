@@ -4,12 +4,12 @@ public class Calculator {
 
     private String srcExpression;
 
-    public String getExpression() {
-        return srcExpression;
+    public Calculator(String srcExpression) {
+        this.srcExpression = srcExpression;
     }
 
-    public void setExpression(String expression) {
-        this.srcExpression = expression;
+    public String getExpression() {
+        return srcExpression;
     }
 
     public void calculate() {

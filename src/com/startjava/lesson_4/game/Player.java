@@ -23,7 +23,7 @@ public class Player {
         this.numbers[i] = num;
     }
 
-    public int[] getNumbers() {
-        return numbers;
+    public int[] getNumbers(int i) {
+        return Arrays.copyOf(numbers, i);
     }
 }

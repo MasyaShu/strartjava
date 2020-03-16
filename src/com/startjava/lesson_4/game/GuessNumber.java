@@ -22,27 +22,39 @@ public class GuessNumber {
 
         for(int i = 0; i < 10; i++) {
             System.out.println("Попытка № " + (i + 1));
+            setNum(player1, i);
+            setNum(player2, i);
 
             if(checkResults(player1, i)) {
-                printNumbers(i + 1);
+                printNumbers(i + 1, player1);
+                printNumbers(i + 1, player2);
+                Arrays.fill(player1.getNumbers(i), i);
+                Arrays.fill(player2.getNumbers(i), i);
                 break;
             }
 
             if(checkResults(player2, i)) {
-                printNumbers(i + 1);
+                printNumbers(i + 1, player1);
+                printNumbers(i + 1, player2);
+                Arrays.fill(player1.getNumbers(i), i);
+                Arrays.fill(player2.getNumbers(i), i);
                 break;
             }
         }
     }
 
-    private boolean checkResults(Player player, int i) {
+    private void setNum(Player player, int i) {
         Scanner scan = new Scanner(System.in);
         String name = player.getName();
 
         System.out.print(name + ", угадай какое число загадал компьютер?: ");
         player.setNum(scan.nextInt(), i);
+    }
 
+    private boolean checkResults(Player player, int i) {
+        String name = player.getName();
         int numP1 = player.getNum(i);
+
         if(secretNum > numP1) {
             System.out.println(name + ", ваше число МЕНЬШЕ загаданного");
             return false;
@@ -55,21 +67,12 @@ public class GuessNumber {
         }
     }
 
-    private void printNumbers(int i) {
-        System.out.print("Игрок " + player1.getName() + " назвал числа: ");
-        int [] p1Numbers = Arrays.copyOf(player1.getNumbers(), i);
+    private void printNumbers(int i, Player player) {
+        System.out.print("Игрок " + player.getName() + " назвал числа: ");
+        int [] p1Numbers = player.getNumbers(i);
         for(int x : p1Numbers) {
                 System.out.print(x + " ");
         }
-        Arrays.fill(player1.getNumbers(), i);
-        System.out.println("");
-
-        int [] p2Numbers = Arrays.copyOf(player2.getNumbers(), i);
-        System.out.print("Игрок " + player2.getName() + " назвал числа: ");
-        for(int x: p2Numbers) {
-            System.out.print(x + " ");
-        }
-        Arrays.fill(player2.getNumbers(), i);
         System.out.println("");
     }
 }

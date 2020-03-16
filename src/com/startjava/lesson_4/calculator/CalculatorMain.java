@@ -6,18 +6,17 @@ public class CalculatorMain {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String reply = "Y";
+        String answer = "Y";
 
-        while(reply.equalsIgnoreCase("Y")) {
-            Calculator calculator = new Calculator();
+        while(answer.equalsIgnoreCase("Y")) {
             System.out.print("Введите математическое выражение: ");
-            calculator.setExpression(scan.nextLine());
+            Calculator calculator = new Calculator(scan.nextLine());
             calculator.calculate();
 
             do {
                 System.out.print("Хотите продолжить? [Y/N]: ");
-                reply = scan.nextLine();
-            } while(!(reply.equalsIgnoreCase("N") || reply.equalsIgnoreCase("Y")));
+                answer = scan.nextLine();
+            } while(!(answer.equalsIgnoreCase("N") || answer.equalsIgnoreCase("Y")));
         }
     }
 }
