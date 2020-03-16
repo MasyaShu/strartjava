@@ -26,8 +26,4 @@ public class Player {
     public int[] getNumbers() {
         return numbers;
     }
-
-    public void clerNumbers() {
-        Arrays.fill(numbers, 0);
-    }
 }

@@ -2,21 +2,21 @@ package com.startjava.lesson_4.calculator;
 
 public class Calculator {
 
-    private String expression;
+    private String srcExpression;
 
     public String getExpression() {
-        return expression;
+        return srcExpression;
     }
 
     public void setExpression(String expression) {
-        this.expression = expression;
+        this.srcExpression = expression;
     }
 
     public void calculate() {
-       String[] s = expression.split(" ");
-       char sign = s[1].charAt(0);
-       int a = Integer.parseInt(s[0]);
-       int b = Integer.parseInt(s[2]);
+       String[] splitExpression = srcExpression.split(" ");
+       char sign = splitExpression[1].charAt(0);
+       int a = Integer.parseInt(splitExpression[0]);
+       int b = Integer.parseInt(splitExpression[2]);
        switch(sign) {
             case '+':
                 System.out.println(Math.addExact(a, b));
