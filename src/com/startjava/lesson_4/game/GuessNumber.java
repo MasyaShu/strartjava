@@ -72,7 +72,7 @@ public class GuessNumber {
             for(int num : attempts) {
                 System.out.print(num + " ");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
     }
 }
