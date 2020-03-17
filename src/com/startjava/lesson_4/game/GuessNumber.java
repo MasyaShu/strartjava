@@ -6,13 +6,11 @@ import java.util.Scanner;
 public class GuessNumber {
 
     private int secretNum;
-    private Player player1;
-    private Player player2;
+    private Player[] players;
     private Scanner scan = new Scanner(System.in);
 
-    GuessNumber(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public GuessNumber(Player[] players) {
+        this.players = players;
     }
 
     public void playGame() {
@@ -20,23 +18,22 @@ public class GuessNumber {
         System.out.println("Игра началась! У вас 10 попыток");
 
         for(int i = 0; i < 10; i++) {
+            boolean isGameOver = false;
             System.out.println("Попытка № " + (i + 1));
-            enterNumber(player1, i);
-            enterNumber(player2, i);
+            enterNumber(i, players);
 
-            if(compareNumbers(player1, i)) {
-                printNumbers(i, new Player[] {player1, player2});
-                clearNumbers(i, new Player[] {player1, player2});
-                break;
+            for(Player player : players) {
+                if(compareNumbers(player, i)) {
+                    printNumbers(i, players);
+                    clearNumbers(i, players);
+                    isGameOver = true;
+                    break;
+                }
             }
-
-            if(compareNumbers(player2, i)) {
-                printNumbers(i, new Player[] {player1, player2});
-                clearNumbers(i, new Player[] {player1, player2});
+            if(isGameOver) {
                 break;
             }
         }
-
     }
 
     private void clearNumbers(int i, Player[] players) {
@@ -45,11 +42,12 @@ public class GuessNumber {
         }
     }
 
-    private void enterNumber(Player player, int i) {
-        String name = player.getName();
-
-        System.out.print(name + ", угадай какое число загадал компьютер?: ");
-        player.setNum(scan.nextInt(), i);
+    private void enterNumber(int i, Player[] players) {
+        for(Player player : players) {
+            String name = player.getName();
+            System.out.print(name + ", угадай какое число загадал компьютер?: ");
+            player.setNum(scan.nextInt(), i);
+        }
     }
 
     private boolean compareNumbers(Player player, int i) {

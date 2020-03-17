@@ -13,7 +13,7 @@ public class GuessNumberMain {
         System.out.print("Второй игрок введите ваше имя: ");
         Player player2 = new Player(scan.nextLine());
 
-        GuessNumber guessNumber = new GuessNumber(player1, player2);
+        GuessNumber guessNumber = new GuessNumber(new Player[] {player1, player2});
 
         String answer = "Y";
         while(answer.equalsIgnoreCase("Y")) {
