@@ -20,12 +20,12 @@ public class GuessNumber {
         boolean isGameOver = false;
         for(int i = 0; i < 10; i++) {
             System.out.println("Попытка № " + (i + 1));
-            enterNumber(i, players);
+            enterNumber(i);
 
             for(Player player : players) {
                 if(compareNumbers(player, i)) {
-                    printNumbers(i, players);
-                    clearNumbers(i, players);
+                    printNumbers(i);
+                    clearNumbers(i);
                     isGameOver = true;
                     break;
                 }
@@ -36,13 +36,13 @@ public class GuessNumber {
         }
     }
 
-    private void clearNumbers(int i, Player[] players) {
+    private void clearNumbers(int i) {
         for(Player player : players) {
             Arrays.fill(player.getNumbers(i), i);
         }
     }
 
-    private void enterNumber(int i, Player[] players) {
+    private void enterNumber(int i) {
         for(Player player : players) {
             System.out.print(player.getName() + ", угадай какое число загадал компьютер?: ");
             player.setNum(scan.nextInt(), i);
@@ -64,10 +64,10 @@ public class GuessNumber {
         return false;
     }
 
-    private void printNumbers(int i, Player[] players) {
+    private void printNumbers(int i) {
         for(Player player : players) {
             System.out.print("Игрок " + player.getName() + " назвал числа: ");
-            int [] attempts = player.getNumbers(i + 1);
+            int[] attempts = player.getNumbers(i + 1);
             for(int num : attempts) {
                 System.out.print(num + " ");
             }
