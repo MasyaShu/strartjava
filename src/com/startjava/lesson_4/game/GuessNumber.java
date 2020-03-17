@@ -44,8 +44,7 @@ public class GuessNumber {
 
     private void enterNumber(int i, Player[] players) {
         for(Player player : players) {
-            String name = player.getName();
-            System.out.print(name + ", угадай какое число загадал компьютер?: ");
+            System.out.print(player.getName() + ", угадай какое число загадал компьютер?: ");
             player.setNum(scan.nextInt(), i);
         }
     }
