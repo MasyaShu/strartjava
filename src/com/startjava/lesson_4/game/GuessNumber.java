@@ -25,15 +25,13 @@ public class GuessNumber {
             enterNumber(player2, i);
 
             if(compareNumbers(player1, i)) {
-                printNumbers(i, player1);
-                printNumbers(i, player2);
+                printNumbers(i, new Player[] {player1, player2});
                 clearNumbers(i, new Player[] {player1, player2});
                 break;
             }
 
             if(compareNumbers(player2, i)) {
-                printNumbers(i, player1);
-                printNumbers(i, player2);
+                printNumbers(i, new Player[] {player1, player2});
                 clearNumbers(i, new Player[] {player1, player2});
                 break;
             }
@@ -69,12 +67,14 @@ public class GuessNumber {
         return false;
     }
 
-    private void printNumbers(int i, Player player) {
-        System.out.print("Игрок " + player.getName() + " назвал числа: ");
-        int [] attempts = player.getNumbers(i + 1);
-        for(int num : attempts) {
+    private void printNumbers(int i, Player[] players) {
+        for(Player player : players) {
+            System.out.print("Игрок " + player.getName() + " назвал числа: ");
+            int [] attempts = player.getNumbers(i + 1);
+            for(int num : attempts) {
                 System.out.print(num + " ");
+            }
+            System.out.println("");
         }
-        System.out.println("");
     }
 }
