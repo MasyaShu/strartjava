@@ -17,8 +17,8 @@ public class GuessNumber {
         secretNum = (int) (Math.random() * 101);
         System.out.println("Игра началась! У вас 10 попыток");
 
+        boolean isGameOver = false;
         for(int i = 0; i < 10; i++) {
-            boolean isGameOver = false;
             System.out.println("Попытка № " + (i + 1));
             enterNumber(i, players);
 
